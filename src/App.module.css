@@ -1,0 +1,14 @@
+.wrap {
+    display: grid;
+    background-color: grey;
+
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 2fr 10fr;
+    /* grid-gap: 10px; */
+
+    grid-template-areas: 
+    "HEADER HEADER"
+    "NAV CONTENT"
+    "FOOTER FOOTER";
+}
+

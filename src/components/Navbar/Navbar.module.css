@@ -1,0 +1,8 @@
+nav {
+    background-color:rgb(46, 40, 40);
+    grid-area: NAV;
+}
+
+ul .active {
+    color: orange;
+}
