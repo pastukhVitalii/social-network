@@ -4,7 +4,7 @@ import MyPosts from "./MyPosts/MyPosts";
 
 let Profile = () => {
   return (
-		<div className={css.content}>
+		<div>
       <div>
         <img src="" alt=""/>
         <div>Description</div>

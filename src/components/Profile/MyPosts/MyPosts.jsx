@@ -10,10 +10,8 @@ let MyPosts = () => {
         <textarea></textarea>
         <button>Add post</button>
       </div>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      <Post message = 'Hi, there' likesCount = '5'/>
+      <Post message = 'How are you?' likesCount = '8'/>
     </div>
 	)
 }
