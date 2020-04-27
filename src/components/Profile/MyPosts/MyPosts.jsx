@@ -1,19 +1,34 @@
-import React from "react";
+import React, {createRef} from "react";
 import css from "./MyPosts.module.css";
+
 import Post from "./Post/Post";
 
-let MyPosts = () => {
+import PropTypes from 'prop-types';
+
+let MyPosts = (props) => {
+
+  let newInputValue = () => {
+    let inputValue = textAreaRef.current.value;
+    props.addPost(inputValue);
+    textAreaRef.current.value = '';
+  }
+
+  let textAreaRef = React.createRef();
+  let postsElement = props.posts.map(p => <Post message={p.message} likesCount={p.likeCount}/>);
   return (
-		<div>
+    <div>
       New Post
       <div>
-        <textarea></textarea>
-        <button>Add post</button>
+        <textarea ref={textAreaRef}/>
+        <button onClick={newInputValue}>Add post</button>
       </div>
-      <Post message = 'Hi, there' likesCount = '5'/>
-      <Post message = 'How are you?' likesCount = '8'/>
+      {postsElement}
     </div>
-	)
-}
+  )
+};
 
 export default MyPosts;
+
+MyPosts.propTypes = {
+  postsElement: PropTypes.string
+};

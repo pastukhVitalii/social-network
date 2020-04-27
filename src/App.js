@@ -11,16 +11,16 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
     <div className={css.wrap}>
       <Header />
-      <Navbar />
+      <Navbar state={props.state.navBar}/>
       <div className={css.content}>
-        <Route path='/profile' component = {Profile} />
-        <Route  path='/dialogs' component = {Dialogs} />
-        <Route path='/news' component={News} />
+        <Route path='/profile' render={() => <Profile state={props.state.profilePage} addPost={props.addPost}/>} />
+        <Route  path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} />} />
+        <Route path='/news' component={News}/>
       </div>
       <Footer />
     </div>

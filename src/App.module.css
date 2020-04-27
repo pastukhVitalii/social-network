@@ -1,6 +1,6 @@
 .wrap {
     display: grid;
-    background-color: grey;
+    background-color: #6f7587;
 
     grid-template-rows: 50px 1fr 50px;
     grid-template-columns: 2fr 10fr;

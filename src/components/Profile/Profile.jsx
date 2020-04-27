@@ -2,7 +2,7 @@ import React from "react";
 import css from "./Profile.module.css";
 import MyPosts from "./MyPosts/MyPosts";
 
-let Profile = () => {
+let Profile = (props) => {
   return (
 		<div>
       <div>
@@ -10,10 +10,10 @@ let Profile = () => {
         <div>Description</div>
       </div>
       <div>
-      <MyPosts />
+      <MyPosts posts={props.state.posts} addPost={props.addPost}/>
       </div>
     </div>
 	)
-}
+};
 
 export default Profile;
