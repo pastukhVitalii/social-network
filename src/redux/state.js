@@ -1,11 +1,15 @@
-import {renderEntireTree} from "../render";
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
 
-let state = {
+
+let store = {
+  _state: {
     profilePage: {
       posts: [
         {id: 1, message: 'Hi, there', likeCount: 15},
         {id: 2, message: 'How are you?', likeCount: 7}
-      ]
+      ],
+      newPostText: 'it-kamasutra.com'
     },
     dialogsPage: {
       dialogs: [
@@ -19,7 +23,8 @@ let state = {
         {id: 2, message: 'Hello!'},
         {id: 3, message: 'Yo'},
         {id: 4, message: ':)'}
-      ]
+      ],
+      newMessageBody: ''
     },
     navBar: {
       bestFriends: [
@@ -28,15 +33,29 @@ let state = {
         {id: 3, name: 'Mark'}
       ]
     }
+  },
+  _callSubscriber() {
+    console.log('State changed');
+  },
+
+  getState() {
+    return this._state;
+  },
+  subscribe(observer) {
+    this._callSubscriber = observer;  // observer
+  },
+
+  dispatch(action) { // { type: 'ADD-POST' }
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+
+    this._callSubscriber(this._state);
   }
-;
-export let addPost = (postText) => {
-  let newPost = {
-    id: 5, message: postText, likeCount: 23
-  }
-  state.profilePage.posts.push(newPost);
-  renderEntireTree(state);
 }
 
-export default state;
 
+
+
+
+export default store;
+window.store = store;

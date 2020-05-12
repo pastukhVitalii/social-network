@@ -10,7 +10,9 @@ let Profile = (props) => {
         <div>Description</div>
       </div>
       <div>
-      <MyPosts posts={props.state.posts} addPost={props.addPost}/>
+        <MyPosts posts={props.profilePage.posts}
+                 newPostText={props.profilePage.newPostText}
+                 dispatch={props.dispatch} />
       </div>
     </div>
 	)
