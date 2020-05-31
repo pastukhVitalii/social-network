@@ -7,23 +7,23 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Profile from './components/Profile/Profile';
 import Navbar from './components/Navbar/Navbar';
-import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 function App(props) {
   return (
     <BrowserRouter>
       <div className={css.wrap}>
         <Header/>
-        <Navbar state={props.state.navBar}/>
+        <Navbar />
+        {/*<Navbarx state={props.state.navBar}/>*/}
         <div className={css.content}>
-          <Route path='/profile' render={() => <Profile
-            profilePage={props.state.profilePage}
-            dispatch={props.dispatch}/>}/>
-          <Route path='/dialogs' render={() => <Dialogs
-            state={props.state.dialogsPage}
-            store={props.store}/>}/>
-          <Route path='/news' component={News}/>
+          <Route path='/profile' render={() => <Profile/>}/>
+          <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+          <Route path='/users'
+                 render={ () => <UsersContainer /> }/>
+          <Route path='/news' component={News} />
         </div>
         <Footer/>
       </div>

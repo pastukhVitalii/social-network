@@ -1,6 +1,5 @@
 import React from "react";
 import css from "./Message.module.css";
-import Dialog from "../Dialog/Dialog";
 
 let Message = (props) => {
   let date = new Date().toLocaleTimeString('ru', {hour: '2-digit', minute: '2-digit'});
