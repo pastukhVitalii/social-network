@@ -3,19 +3,19 @@ import {BrowserRouter, Route} from "react-router-dom";
 
 import css from './App.module.css';
 
-import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Profile from './components/Profile/Profile';
 import Navbar from './components/Navbar/Navbar';
 import News from "./components/News/News";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 function App(props) {
   return (
     <BrowserRouter>
       <div className={css.wrap}>
-        <Header/>
+        <HeaderContainer />
         <Navbar />
         {/*<Navbarx state={props.state.navBar}/>*/}
         <div className={css.content}>
