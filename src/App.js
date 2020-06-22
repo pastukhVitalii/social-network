@@ -4,12 +4,12 @@ import {BrowserRouter, Route} from "react-router-dom";
 import css from './App.module.css';
 
 import Footer from './components/Footer/Footer';
-import Profile from './components/Profile/Profile';
 import Navbar from './components/Navbar/Navbar';
 import News from "./components/News/News";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 function App(props) {
   return (
@@ -19,7 +19,8 @@ function App(props) {
         <Navbar />
         {/*<Navbarx state={props.state.navBar}/>*/}
         <div className={css.content}>
-          <Route path='/profile' render={() => <Profile/>}/>
+          <Route path='/profile/:userId?'
+                 render={ () => <ProfileContainer /> }/>
           <Route path='/dialogs' render={() => <DialogsContainer/>}/>
           <Route path='/users'
                  render={ () => <UsersContainer /> }/>
