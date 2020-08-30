@@ -1,28 +1,40 @@
-.messages{
+.messages {
     margin: 10px auto;
     width: 300px;
-    background-color: #282c34;
+    background-color: rgb(46, 40, 40);
     border-radius: 5px;
     position: relative;
 }
-.text{
+
+.messages:first-child {
+    margin-top: 50px;
+}
+
+.messages:last-child {
+    margin-bottom: 50px;
+}
+
+.text {
     color: #ffffff;
     text-align: left;
     padding: 10px 10px 0 10px;
     hyphens: auto;
     word-break: break-all;
 }
-.date{
+
+.date {
     color: #6f7587;
     text-align: right;
     padding: 0 10px 5px 0;
     margin-left: 20px;
 }
-.tail{
+
+.tail {
     height: 0;
     width: 0;
 }
-.tail:before{
+
+.tail:before {
     content: "";
     border: 20px solid transparent;
     border-bottom-color: #282c34;
@@ -30,17 +42,21 @@
     bottom: 0;
     left: -20px;
 }
+
 .tail:after {
     content: "";
-    border: 20px solid #6f7587;
+    border: 20px solid white;
     border-radius: 50%;
     position: absolute;
     bottom: -3px;
     left: -40px;
 }
-.red{
+
+.red {
     color: red;
 }
-.black{
+
+.black {
     color: #000000;
 }
+

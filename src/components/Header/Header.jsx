@@ -1,20 +1,21 @@
 import React from "react";
-import css from"./Header.module.css";
+import css from "./Header.module.css";
 import {NavLink} from "react-router-dom";
 
 let Header = (props) => {
-  return (
-		<header>
-			<div className={css.logo}>
-				<img src="https://png.pngtree.com/element_pic/00/16/07/115783931601b5c.jpg" alt="logo"/>
-			</div>
-
-      <div className={css.loginBlock}>
-        { props.isAuth ? props.login
-          : <NavLink to={'/login'}>Login</NavLink> }
-      </div>
-		</header>
-	)
+    return (
+        <header>
+            <div className={css.logo}>
+                <div className={css.logoTitle}>SN</div>
+            </div>
+            <div className={css.loginBlock}>
+                {props.isAuth
+                    ?
+                    <div>{props.login} - <button onClick={props.logout} className={css.btnLogin}>Log out</button></div>
+                    : <NavLink to={'/login'}>Login</NavLink>}
+            </div>
+        </header>
+    )
 }
 
 export default Header;

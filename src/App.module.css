@@ -1,6 +1,6 @@
 .wrap {
     display: grid;
-    background-color: #6f7587;
+    background-color: #dddbdb;
 
     grid-template-rows: 50px 1fr 50px;
     grid-template-columns: 2fr 10fr;
@@ -12,6 +12,6 @@
     "FOOTER FOOTER";
 }
 .content{
-    padding: 10px;
+    padding: 20px;
 }
 

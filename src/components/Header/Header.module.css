@@ -1,18 +1,46 @@
 header {
-    background-color: brown;
+    background-color: #ec4d3b;
     grid-area: HEADER;
+    display: flex;
+    justify-content: space-between;
 }
 
-.logo img{
-    width: 50px;
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    margin-left: 20px;
+}
+
+.logoTitle {
+    font-size: 24px;
+    color: white;
+    text-shadow: 3px -2px 3px black;
 }
 
 .loginBlock {
-    position: absolute;
-    right: 20px;
-    top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    margin-right: 20px;
 }
 
-.loginBlock a {
+.loginBlock {
     color: white;
+}
+
+.btnLogin {
+    background-color: rgb(46, 40, 40);
+    border: none;
+    color: white;
+    border-radius: 3px;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    margin: 5px;
+
 }

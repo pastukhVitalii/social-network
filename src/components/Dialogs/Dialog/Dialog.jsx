@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./Dialog.module.css";
+import css from "../Dialogs.module.css";
 import {NavLink} from "react-router-dom";
 
 let Dialog = (props) => {

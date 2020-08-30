@@ -1,39 +1,48 @@
-import React, {createRef} from "react";
-import css from "./MyPosts.module.css";
+import React from "react";
+import css from '../Profile.module.css';
 
 import Post from "./Post/Post";
 
-import PropTypes from 'prop-types';
+import {Field, reduxForm} from "redux-form";
+import {Textarea} from "../../common/FormsControls/FormsControls";
+import {maxLengthCreator, required} from "../../../utils/validators/validators";
 
-let MyPosts = (props) => {
-  let textAreaRef = React.createRef();
-  let postsElement = props.posts.map(p => <Post message={p.message} likesCount={p.likeCount}/>);
-  let onAddPost = () => {
-    props.addPost();
-  }
+const maxLength10 = maxLengthCreator(10);
 
-  let onPostChange = () => {
-    let text = textAreaRef.current.value;
-    props.updateNewPostText(text);
-  }
+let AddNewPostForm = (props) => {
+    return <form onSubmit={props.handleSubmit}>
+        <div>
+            <Field name="newPostText" component={Textarea} placeholder={"Post message"}
+                   validate={[required, maxLength10]} className={css.textarea}/>
+        </div>
+        <div>
+            <button className={css.btn}>Add post</button>
+        </div>
+    </form>;
+}
 
-  return (
-    <div>
-      New Post
-      <div>
-        <textarea
-          ref={textAreaRef}
-          value={props.newPostText}
-          onChange={onPostChange}/>
-        <button onClick={onAddPost}>Add post</button>
-      </div>
-      {postsElement}
-    </div>
-  )
-};
+let AddNewPostFormRedux = reduxForm({form: "ProfileAddNewPostForm"})(AddNewPostForm);
+
+const MyPosts = React.memo(props => {
+    console.log("RENDER");
+    let postsElement =
+        [...props.posts]
+            .reverse()
+            .map(p => <Post message={p.message} likeCount={p.likeCount} key={p.id}/>);
+
+    let onAddPost = (values) => {
+        props.addPost(values.newPostText);
+    }
+
+    return (
+        <>
+            <div>New Post</div>
+            <div className={css.posts}>
+                <AddNewPostFormRedux onSubmit={onAddPost}/>
+            </div>
+            {postsElement}
+        </>
+    )
+});
 
 export default MyPosts;
-
-MyPosts.propTypes = {
-  postsElement: PropTypes.string
-};

@@ -1,13 +1,18 @@
 import React from "react";
-import css from "./ProfileInfo/Profileinfo.module.css";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import Profileinfo from "./ProfileInfo/Profileinfo";
+import css from './Profile.module.css'
 
 let Profile = (props) => {
   return (
-    <div>
-      <Profileinfo profile={props.profile}/>
-      <MyPostsContainer store={props.store}/>
+    <div className={css.content}>
+      <Profileinfo profile={props.profile}
+                   isOwner={props.isOwner}
+                   status={props.status}
+                   updateStatus={props.updateStatus}
+                   fullName={props.fullName}
+                   photos={props.photos}/>
+      <MyPostsContainer store={props.store} />
     </div>
   )
 };

@@ -1,0 +1,82 @@
+.content {
+    grid-area: CONTENT;
+    background-color: #dddbdb;
+}
+
+.backgroundPhoto {
+    height: 50%;
+    width: 100%;
+    background-image: url("https://photocentra.ru/images/main14/146786_main.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.userPhoto img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    filter: drop-shadow(2px 4px 6px black);
+    margin: 60px 40px;
+}
+
+.userDescription {
+    margin: 70px 0 0;
+
+}
+.userName {
+    color: white;
+    font-size: 36px;
+}
+.userStatus {
+    color: white;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.userStatus {
+    display: flex;
+}
+
+.posts {
+    background-color: white;
+    margin: 20px 0 0 ;
+    padding: 10px;
+}
+
+.item {
+    background-color: white;
+    margin: 20px 0;
+    padding: 10px;
+}
+.item:last-child {
+    margin-bottom: 0;
+}
+.item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.textarea {
+    width: calc(100% - 20px);
+    height: 60px;
+    padding: 10px;
+}
+
+.btn {
+    background-color: #ec4d3b;
+    color: white;
+    border: 0 solid #e6e6e6;
+    border-radius: 3px;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+}

@@ -3,7 +3,11 @@ footer {
 }
 
 .site {
-    background-color: yellow;
-    width: 100%;
+    background-color: #ec4d3b;
+    color: white;
+    width: calc(100% - 20px);
     height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
 }

@@ -1,15 +1,15 @@
 import React from 'react';
-import css from './Profileinfo.module.css';
-import Preloader from "../../Preloader/Preloader";
+import css from '../Profile.module.css';
+import Preloader from "../../common/Preloader/Preloader";
+import ProfileDescriptionWithHooks from "./ProfileStatus/ProfileDescriptionWithHooks";
 
-const ProfileInfo = (props) => {
-  if (!props.profile) {
+const ProfileInfo = ({profile, status, updateStatus, fullName, photos}) => {
+  if (!profile) {
     return <Preloader />
   }
     return (
-      <div className={css.info}>
-        <img src="" alt=""/>
-        <div>Description</div>
+      <div className={css.content} >
+        <ProfileDescriptionWithHooks status={status} updateStatus={updateStatus} fullName={fullName} photos={photos}/>
       </div>
   )
 }

@@ -1,8 +1,13 @@
 nav {
     background-color: rgb(46, 40, 40);
     grid-area: NAV;
-    padding: 20px;
     color: #ffffff;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.item {
+    padding: 8px 20px;
 }
 
 a {
@@ -11,7 +16,7 @@ a {
 }
 
 .item a.activeLink {
-    color: orange;
+    color: #ec4d3b;
 }
 
 .subTitle {

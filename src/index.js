@@ -5,14 +5,22 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from "./redux/redux-store";
 import {Provider} from "react-redux";
+import {BrowserRouter} from "react-router-dom";
 
 let renderEntireTree = () => {
+
+  /*setInterval(() => {
+    store.dispatch({type: "FAKE"})
+}, 1000);*/
+
   ReactDOM.render(
+    <BrowserRouter>
     <React.StrictMode>
       <Provider store={store}>
         <App />
       </Provider>
-    </React.StrictMode>,
+    </React.StrictMode>
+    </BrowserRouter>,
     document.getElementById('root')
   );
 }
